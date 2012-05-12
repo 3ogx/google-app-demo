@@ -23,6 +23,8 @@ import jinja2
 
 from google.appengine.ext import db
 from google.appengine.api import users
+from model import UserModel
+from model import Greeting
 
 
 # template
@@ -31,11 +33,11 @@ jinja_enviroment = jinja2.Environment(
     )
 
 # data model
-class Greeting(db.Model):
-    """Model an individual Guestbook entry with an author, content and date """
-    author = db.UserProperty()
-    content = db.StringProperty(multiline=True)
-    date = db.DateTimeProperty(auto_now_add=True)
+# class Greeting(db.Model):
+#     """Model an individual Guestbook entry with an author, content and date """
+#     author = db.UserProperty()
+#     content = db.StringProperty(multiline=True)
+#     date = db.DateTimeProperty(auto_now_add=True)
 
 # process filter
 def guestbook_key(guestbook_name = None):
